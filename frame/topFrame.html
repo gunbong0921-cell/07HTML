@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="UTF-8">
+<title>topFrame.html</title>
+</head>
+<body>
+	<h2>Top프레임</h2>	 
+	<!-- table>tr>td*4 -->
+	<!-- 
+	a태그를 통해 링크를 걸때 target은 각 프레임의 이름을 지정해야한다. 
+	frame태그는 부모/자식의 관계로 생성할 수 없기 때문이다. 만약 
+	프레임의 이름을 잘못 지정하는 경우에는 새탭에서 페이지가 열리게된다.
+	-->
+	<table border="1"> 
+		<tr>
+			<td><a href="https://kbstar.com" target="leftFrame">
+				국민은행</a></td>
+			<td><a href="https://daum.net" target="contentFrame">
+				다음</a></td>
+			<td><a href="https://nate.com" target="bottomFrame">
+				네이트</a></td>		
+		</tr>
+	</table>
+</body>
+</html>
