@@ -13,17 +13,18 @@
 			<col style="width:70%" />	
 		</colgroup>		 
 		<tr>
-			<td>placeholder</td>
 			<td>
-				<!-- 입력값이 없을때 입력힌트를 보여줌 -->
-				<input type="text" name="i1" placeholder="힌트를 표시합니다" />
+				<label for="place">placeholder</label>
+			</td>
+			<td>
+				<!-- 입력값이 없는 경우 입력힌트를 보여줌  -->
+				<input type="text" name="i1" id="place" placeholder="힌트를 표시합니다" />
 			</td>
 		</tr>
 		<tr>
 			<td>autofocus</td>
 			<td>
-				<!-- 페이지가 로드될때 자동으로 포커싱되어 입력할 수 있는
-				 상태가 됨  -->
+				<!-- 페이지가 로드될때 자동으로 포커싱되어 입력할 수 있는 상태가 됨 -->
 				<input type="text" name="i2" autofocus size="40"
 					placeholder="페이지가 로딩되면 커서가 자동으로 이동됨" />
 			</td>
@@ -31,16 +32,15 @@
 		<tr>
 			<td>required</td>
 			<td>
-				<!-- 입력값이 없는 상태에서 submit했을때 풍선도움말을
-         띄워줌. 또한 서버로 전송되는것을 차단한다. -->
+				<!-- 입력값이 없는 상태에서 submit했을때 풍선도움말을 띄워줌. 또한 서버로 전송되는것을 차단한다. -->
 				<input type="text" name="i3" required />
 			</td>
 		</tr>
 		<tr>
 			<td>type="number"</td>
 			<td>
-				<!-- 숫자만 입력할 수 있고 커서가 포커싱되면 up/down 할수있는
-				 스핀버튼이 우측에 생성됨  -->
+				<!-- 숫자만 입력할 수 있고 커서가 포커싱되면 업/다운 할수있는 
+				 스핀박스가 우측에 생성됨 -->
 				<input type="number" name="i4" />
 			</td>
 		</tr>
@@ -48,40 +48,41 @@
 			<td>type="range"</td>
 			<td>
 				<!-- 
-				최대, 최소 범위를 설정하여 숫자를 편리하게 입력할 수 있게 해줌.
+				최대, 최소 범위를 설정하여 숫자를 좀 더 편리하게 입력할 수 있게 해줌.
 				min, max : 최소, 최대값
-				step : 한칸 움직일때 범위 설정
+				step : 한칸 움직일때의 범위 설정 
 				-->
-        <script>
-          let rangeFunc = () => {
-            console.log("입력됨");
-            let v = document.getElementById("i5").value;
-            document.getElementById("rValue").innerHTML = v;
-          }
-        </script>
-				<input type="range" name="i5" id="i5" min="1" max="10" 
+				<script>
+				let rangeFunc = () => {
+					console.log("입력됨");
+					let v = document.getElementById("i5").value;
+					document.getElementById("rValue").innerHTML = v;
+				}
+				</script>
+				<input type="range" name="i5" id="i5" value="2" min="1" max="10" 
 					step="1" onchange="rangeFunc();"/>
-        <span id="rValue">선택한값</span>  
+				<span id="rValue">선택한값</span>
 			</td>
 		</tr>
 		<tr>
 			<td id="myColor">type="color"</td>
 			<td>
-				<!-- 
-				색깔을 선택할 수 있게 컬러피커(Color picker)를 띄워준다. 
-				웹브라우저에 따라 사용되는 피커가 조금 차이가 있다. 
-				-->
+				<!-- 색깔을 선택할 수 있게 컬러피커(Color picker)를 띄워준다. 웹브라우저에
+				 따라 사용되는 피커가 조금 차이가 있다. -->
 				<input type="color" name="i6" 
 				onchange="document.getElementById('myColor').style.color=this.value;"/>
+				<!-- 피커를 통해 색깔을 선택하면 change 이벤트가 발생하게 되고, 이때 
+				 선택한 색깔을 td태그에 적용하여 텍스트를 변경한다. 색깔 선택후 Enter를 
+				 누르면된다. -->
 			</td>
 		</tr>				
 		<tr>
 			<td>datalist태그</td>
 			<td>
 				<!-- 
-				datalist 태그는 select와 비슷하게 항목 하나를 선택할 수 있는
-				태그로 input의 list속성값과 datalist의 id속성을 매칭하여 짝을
-				이루게된다. 선택한 항목이 input에 입력되는 방식이다. 
+				datalist는 select와 비슷하게 항목 하나를 선택할 수 있는 기능의 태그로
+				input의 list속성값과 datalist의 id속성을 매칭하여 짝을 이루게된다. 
+				선택한 항목이 input에 입력되는 방식이다. 
 				-->
 				<input type="text" name="i7" list="what"><br>
 				<datalist id="what">
@@ -99,13 +100,45 @@
 				날짜 : <input type="date" name="i10"><br>
 				시간 : <input type="time" name="i11"><br>
 			</td>
-		</tr>		 
+		</tr>
+		<!-- jquery.com에서 제공하는 UI를 이용해서 Date picker 구현하기 -->
+		<tr>
+			<td>jQuery Date picker</td>
+			<td>
+				<input type="text" id="datepicker" size="30">
+				<select id="format">
+					<option value="mm/dd/yy">Default - mm/dd/yy</option>
+					<option value="yy-mm-dd">ISO 8601 - yy-mm-dd</option>
+					<option value="d M, y">Short - d M, y</option>
+					<option value="d MM, y">Medium - d MM, y</option>
+					<option value="DD, d MM, yy">Full - DD, d MM, yy</option>
+					<option value="'day' d 'of' MM 'in the year' yy">With text - 'day' d 'of' MM 'in the year' yy</option>
+				</select>
+			</td>
+		</tr>	 
 		<tr>
 			<td colspan="2" style="text-align: center;">
 				<button type="submit">전송하기</button>
 			</td>
 		</tr>	
 	</table>
-	</form>	
+	</form>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.14.2/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://code.jquery.com/ui/1.14.2/jquery-ui.js"></script>
+<script>
+$( function() {
+	$( "#datepicker" ).datepicker();
+	$( "#format" ).on( "change", function() {
+		$( "#datepicker" ).datepicker( "option", "dateFormat", $( this ).val() );
+	});
+} );
+</script>	
 </body>
 </html>
+
+
+
+

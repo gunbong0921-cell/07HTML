@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>시멘틱태그</title>
+<style type="text/css">
+	/*
+	CSS 에서는 HTML의 엘리먼트를 선택하기 위해 Selector라는 것이
+	있는데, 여기에 사용된것은 태그 자체를 선택하는 태그셀렉터 이다. 
+	즉 문서에 포함된 태그를 선택해서 크기나 색깔 등의 스타일을 
+	부여한다. 
+	*/
+	body{width:440px;}
+	header, nav, section, article, aside, footer{
+		display:block; width:400px; margin:4px; padding:4px; 
+		background-color:#ddd; text-align:center;
+	}
+	section{float:left; width:280px; height:60px;}
+	article{width:264px; background-color:#efefef;}
+	aside{float:left; width:104px; height:60px;}
+	footer{overflow:hidden;}
+</style> 
+</head>
+<body>
+	<!-- 
+	시맨틱태그 : 컴퓨터가 정보를 이해하고, 추론할 수 있는 구조를 
+		만들기 위해 HTML5 에서 추가된 태그이다. 기존에는 div태그로
+		레이아웃을 만들었지만 현재는 시맨틱 태그로 레이아웃을 구성할
+		수 있다. div와 같이 하나의 블럭을 표현하는 마크업 기능을 
+		가지고있다. 
+	-->
+	<h2>시맨틱(Semantic) 태그</h2>		
+	<header>header1영역</header>
+	<nav>nav영역</nav>
+	<section>
+		section영역
+		<article>article영역</article>	
+	</section>
+	<aside>aside영역</aside>
+	<footer>footer영역</footer>
+	<div>div 태그입니다.</div>
+</body>
+</html>

@@ -1,47 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>H07Img.html</title>
+<meta charset="UTF-8">
+<title>이미지</title>
 </head>
 <body>
-  <h2>img 태그</h2> 
+	<h2>img 태그</h2>
+	
+	<h3>이미지를 원본크기대로 표시하기</h3>	
+	<!-- width, height 속성을 부여하지 않으면 원본크기 그대로 표시됨 -->
+	<img src="./images/1.png" alt="스펀지밥">
+	
+	<h2>이미지 크기설정</h2>
+	<!-- 가로크기만 지정하면 세로는 비율에 맞게 자동으로 조정된다. -->
+	<img src="./images/1.png" width="300" alt="스폰지밥" />
+	<!-- 가로, 세로 크기를 동시에 지정하면 경우에 따라 비율에 맞지않아
+	 왜곡현상이 생길 수 있다.  -->
+	<img src="./images/2.png" width="100" height="200" alt="징징이" />
+	<!-- 따라서 대부분의 경우 이미지 사이즈는 지정하지 않는다. -->
+	<img src="./images/2.png" alt="징징이" />
 
-  <h3>이미지를 원본크기로대로 표시하기</h3>
-  <!-- width, height 속성을 부여하지 않으면 원본크기로 실행됨 -->
-  <img src="./images/1.png" alt="스펀지밥">
+	<h2>이미지에 링크걸기</h2>
+	<!-- 이미지를 a태그로 감싼 후 링크를 설정한다. -->
+	<a href="https://www.tjoeun.co.kr/" target="_blank">
+		<img src="./images/logo.png" alt="로고" />
+	</a>
+	
+	<a href="https://www.ikosmo.co.kr" target="_blank">
+		<img src="https://www.ikosmo.co.kr/html/_skin/img/common/logo.png" alt="코스모" />
+	</a>
+  
 
-  <h2>이미지 크기설정</h2>
-  <!-- 가로크기만 지정하면 세로는 비율에 맞게 자동으로 조정된다. -->
-  <img src="./images/1.png" width="100" alt="스펀지밥">
-  <!-- 가로, 세로 크기를 동시에 지정하면 경우에 따라 비율에 맞지않아
-   왜곡현상이 생길 수 있다. -->
-  <img src="./images/2.png" width="100" height="200" alt="징징이">
-  <!-- 따라서 대부분의 경우 이미지 사이즈는 지정하지 않는다. -->
-  <img src="./images/2.png" alt="징징이">
-
-  <h2>이미지에 링크걸기</h2>
-  <!-- 이미지를 a태그로 감싼 후 링크를 설정한다. -->
-  <a href="http://koreavc.or.kr/" target="_blank">
-    <img src="./images/logo.png" alt="로고">
-  </a>
-
-  <h2>외부에 있는 이미지 가져오기</h2>
-  <a href="https://n.news.naver.com/" target="_blank"> 
-    <img src="https://imgnews.pstatic.net/image/008/2026/06/22/0005375339_001_20260622162510987.jpg?type=w860" 
-    alt="코스피 경고"></a>
-
-  <!-- 
-    이미지를 맴(지도)처럼 분할해서 링크를 걸 수 있게 해주는 기능
-    map태그의 name속성값과 img 태그의 usemap의 속성값을 일치시켜
-    연결한다.
-    이미지맵의 shape 속성
-      rectangle : 사각형(좌측상단과 우측하단의 꼭지점으로 좌표 연결)
-      circle : 원(중심점과 반지름으로 설정)
-      polygon : 다각형(각 꼭지점을 하나씩 명시해서 설정)  
-  -->
-  <h2>이미지맵 사용하기</h2>
+	<!-- 
+	이미지를 맵(지도)처럼 분할해서 링크를 걸 수 있게 해주는 기능
+	map 태그의 name 속성값과 img 태그의 usemap의 속성값을 일치시켜 연결한다. 
+	이미지맵의 shape 속성
+		rectangle : 사각형(좌측상단과 우측하단의 꼭지점으로 좌표 연결)
+		circle : 원(중심점과 반지름으로 설정)
+		polygon : 다각형(각 꼭지점을 하나씩 명시해서 설정)
+	-->
+	<h2>이미지맵 사용하기</h2>
 	<img src="./images/Map01.png" alt="이미지맵사용" usemap="#MyImage">
 	<map name="MyImage">
 		<area shape="rect" coords="72,127,173,229" 
@@ -52,7 +50,12 @@
 			href="https://nate.com" alt="네이트">
 		<area shape="poly" coords="497,128,483,164,446,179,480,195,499,230,512,192,552,179,512,165" 
 			href="https://google.com" alt="구글">
-	</map>  
+	</map>
+
+	
+
+
+ 
+
 </body>
 </html>
-
