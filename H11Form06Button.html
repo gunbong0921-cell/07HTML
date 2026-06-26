@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>폼</title>
+</head>
+<body>
+	<h2>input태그의 버튼속성</h2>
+	<fieldset>
+		<form>
+			이름 : <input type="text" name="name" value="홍길동" />
+			<br />		
+			직업 : 
+			<input type="radio" name="job" value="S" checked />학생
+			&nbsp;&nbsp;
+			<input type="radio" name="job" value="T" />강사
+			<br/>
+			자기소개:
+			<textarea name="intro" cols="50" rows="5">아버지를 아버지라 부르고..</textarea>
+			<br/> 
+			<!-- 
+			type이 image 이거나 submit 인 경우 둘다 클릭시 폼값을 서버로 전송한다. 단 image 인 경우 직접 제작한 이미지로 커스텀 할 수 있다. 또한 <form> 태그 내부에 있는 input에서 엔터키만 누르더라도 전송 처리가 가능하다. 
+			-->
+			<table border="1">
+				<tr>
+					<td>이미지버튼</td>
+					<!-- 이미지 버튼은 img 태그와 마찬가지로 src 속성이 추가된다.  -->
+					<td><input type="image" src="./images/button.jpg" /></td>
+				</tr>
+				<tr>
+					<td>submit버튼</td>
+					<!-- HTML의 기본 UI로 버튼이 렌더링 됨 -->
+					<td><input type="submit" value="전송" /></td>
+				</tr>
+				<!-- 
+				reset 타입은 폼의 초기상태로 되돌려준다. 입력된 내용을 지우는게 아니라, 초기에 렌더링된 상태로 돌아간다. 
+				-->
+				<tr>
+					<td>reset 버튼</td>
+					<td><input type="reset" value="리셋" /></td>
+				</tr>
+				<!-- 
+				button 태그는 type을 명시하지 않으면 submit이 디폴트 값이므로, type을 명시해서 어떤 기능의 버튼으로 사용할지 결정해야 한다. 
+				-->
+				<tr>
+					<td>button태그 사용</td>
+					<td><button type="button" onclick="alert('경고창입니다.');">버튼타이틀</button></td>
+				</tr>
+			</table>
+			<br />
+			<!-- 
+			button 타입인 경우에는 눌렀을때 아무런 액션도 발생하지 않는다. 
+			따라서 이벤트 핸들러를 통해 JavaScript 함수를 호출하는 방식으로 
+			사용한다.  -->
+			<input type="button" onmouseover="alert('마우스올렸나요?');" 
+				value="MouseOver이벤트 " />
+			&nbsp;&nbsp;
+			<input type="button" onmouseout="alert('마우스내렸나요?');" 
+				value="MouseOut이벤트 " />
+		</form>
+	</fieldset>
+</body>
+</html>
+
+
+
+
+
+
+
